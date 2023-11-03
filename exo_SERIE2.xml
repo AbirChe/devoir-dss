@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ONE_SERIE2.xsd">
+    <memoire typeMemo="national">
+        <titre>application Web</titre> 
+        <auteur>ali1</auteur>
+        <universite>univ boumerdes</universite>
+        <annee>2021</annee> 
+    </memoire>
+    <memoire typeMemo="international">
+        <titre>moh</titre> 
+        <auteur>application mobile</auteur>
+        <universite>univ boumerdes</universite>
+        <annee>2021</annee> 
+    </memoire>
+    <livre> 
+        <titre>dss</titre>
+        <auteur>ali benali</auteur>
+        <tome nb_pages="110" soustitre="kjh"/>
+        <edition>
+            <editeur>eyrolles</editeur>
+            <lieu_edition>annaba</lieu_edition>
+            <ISBN>12345</ISBN>
+            <annee>2000</annee>
+        </edition>
+    </livre>
+    <article> 
+        <titre>dss</titre>
+        <auteur>alibenali</auteur>
+        <annee>1345</annee>
+        <journal nom_journal="springer" >
+            <pages>eyrolles</pages>
+            <num_journal>annaba</num_journal>
+        </journal>
+    </article>
+</biblio>
+<!--ca marche normal-->

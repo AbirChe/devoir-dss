@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT list (auteur*)> 
+<!ELEMENT auteur (prenom,nom,naissance,nationalite,site?,biographie)> 
+<!ATTLIST auteur id ID #IMPLIED> 
+<!ELEMENT nom (#PCDATA)> 
+<!ELEMENT prenom (#PCDATA)> 
+<!ELEMENT naissance (#PCDATA)> 
+<!ELEMENT nationalite (#PCDATA)> 
+<!ELEMENT site EMPTY> 
+<!ATTLIST site url CDATA #REQUIRED> 
+<!ELEMENT biographie (p*)> 
+<!ELEMENT p (#PCDATA | refauteur | annee)*> 
+<!ELEMENT refauteur (#PCDATA)> 
+<!ATTLIST refauteur code IDREF #IMPLIED> 
+<!ELEMENT annee (#PCDATA)> 

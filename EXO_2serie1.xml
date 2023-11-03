@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE list SYSTEM "EXO_2.dtd" [<!ENTITY HV "Victor Hugo">]>
+<!-- avec entite générale interne [ 
+<!ENTITY HV "Victor Hugo"> 
+]>  -->
+
+<!-- entité générale externe
+    <!DOCTYPE liste_auteurs SYSTEM "EXO2suite.dtd"[<!ENTITY HV SYSTEM 
+"vh.ent"]> 
+-->
+<!--le fichier externe vh.ent contient le code suivant
+"Victor Hugo"
+-->
+<list>
+    <auteur id="tanembauw">
+        <prenom>tan</prenom>
+        <nom>tanembaw</nom>
+        <naissance>31 Mai 2000</naissance>
+        <nationalite>français</nationalite>
+        <site url="http://www.tanembaw.net/" />
+        <biographie>
+            <p>
+                Né d'un père comptable en en <annee>1855</annee>. Il a participé avec l’auteur 
+                &HV; et 
+                <refauteur code="Mill">Bill</refauteur> 
+            </p>
+            <p>
+                Il a écrit les livres de système d’exploitation.Mmmmmmmmmmmmmmmmmmmm 
+            </p>
+        </biographie>
+    </auteur>
+    <auteur id="Mill">
+        <prenom>Mill</prenom>
+        <nom>bill</nom>
+        <naissance>17 octobre 1974</naissance>
+        <nationalite>américaine</nationalite>
+        <site url="http://www.bill.com/" />
+        <biographie>
+            <p>
+                Né en<annee>1974</annee>. Il a participé avec l’auteur 
+                <refauteur code="Mill">Mill</refauteur>. il a a écrit les livres de bases de données. 
+                En <annee>2005</annee>, elle livre le livre BDD avec ……. 
+            </p>
+        </biographie>
+    </auteur>
+</list >

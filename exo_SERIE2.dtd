@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT biblio (livre|article|memoire)*>
+ <!ELEMENT livre (titre, auteur+, tome*, edition)> 
+ <!ATTLIST titre soustitre CDATA #IMPLIED> 
+ <!ELEMENT titre (#PCDATA)> 
+ <!ELEMENT auteur (#PCDATA)> 
+ <!ELEMENT tome EMPTY>
+ 
+ <!ATTLIST tome
+ nb_pages CDATA #REQUIRED
+ soustitre CDATA #IMPLIED>
+ <!ELEMENT edition (editeur, lieu_edition, ISBN, annee)>
+ 
+ <!ELEMENT editeur (#PCDATA)>
+ <!ELEMENT lieu_edition (#PCDATA)> 
+ <!ELEMENT ISBN (#PCDATA)>
+ <!ELEMENT annee (#PCDATA)>
+ 
+ 
+ <!ELEMENT article (titre, auteur+, annee, journal)>
+ 
+ <!ELEMENT journal (pages, num_journal)>
+ <!ATTLIST journal nom_journal CDATA "inconnue"> 
+ <!ELEMENT pages (#PCDATA)>
+ <!ELEMENT num_journal (#PCDATA)>
+ 
+ <!ELEMENT memoire (titre, auteur+, universite, annee)>
+ <!ELEMENT universite (#PCDATA)> 
+ <!ATTLIST memoire typeMemo (national|international) #REQUIRED>

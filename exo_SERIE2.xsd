@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified">
+    <!-- Déclarations des éléments de type simple -->
+    
+    <xs:element name="auteur" type="xs:string"/>
+    <xs:element name="pages" type="xs:string"/>
+    <xs:element name="editeur" type="xs:string"/>
+    <xs:element name="lieu_edition" type="xs:string"/>
+    <xs:element name="ISBN" type="xs:string"/>
+    <xs:element name="num_journal" type="xs:string"/>
+    <xs:element name="universite" type="xs:string"/>
+    <xs:element name="annee" type="xs:string"/>
+    <!-- Déclarations des éléments de type complexe -->
+    
+    <xs:element name="titre">
+        <xs:complexType mixed="true">
+            <xs:attribute name="sousTitre" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="edition">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="editeur"/>
+                <xs:element ref="lieu_edition"/>
+                <xs:element ref="ISBN"/>
+                <xs:element ref="annee"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="tome">
+        <xs:complexType>
+            <xs:attribute name="nb_pages" type="xs:integer" use="required"/>
+            <xs:attribute name="soustitre" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    
+    
+    <xs:element name="livre">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="titre"/>
+                <xs:element ref="auteur" maxOccurs="unbounded"/>
+                <xs:element ref="tome"/>
+                <xs:element ref="edition"/>
+                
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="journal">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="pages"/>
+                <xs:element ref="num_journal"/>
+            </xs:sequence>
+            <xs:attribute name="nom_journal" type="xs:string" default="inconnu"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="article">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="titre"/>
+                <xs:element ref="auteur" minOccurs="1"
+                    maxOccurs="unbounded"/>
+                <xs:element ref="annee"/>
+                <xs:element ref="journal"/> 
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="memoire">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="titre"/>
+                <xs:element ref="auteur" minOccurs="1"
+                    maxOccurs="unbounded"/>
+                <xs:element ref="universite"/> 
+                <xs:element ref="annee"/> 
+            </xs:sequence>
+            <xs:attribute ref="typeMemo" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute name= "typeMemo">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="national|international"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    
+    <xs:element name="biblio">
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="livre"/>
+                <xs:element ref="article"/>
+                <xs:element ref="memoire"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
